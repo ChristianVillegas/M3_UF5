@@ -8,6 +8,10 @@ public class UsaHora {
 			  System.out.println(time.toString());
 		  } catch (HourOutOfRangeException horamala) {
 			  System.out.println("Error! Hora incorrecta.");
+		  } catch (MinutOutOfRangeException minutdolent) {
+			  System.out.println("Error! Minut incorrecte.");
+		  } catch (SegonOutOfRangeException segondolent) {
+			  System.out.println("Error! Segon incorrecte.");
 		  }
 	  }
 	

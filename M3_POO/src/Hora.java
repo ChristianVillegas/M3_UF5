@@ -30,15 +30,19 @@ public class Hora {
 	  }
   }
   
-  public void setMinut(int m) { 
+  public void setMinut(int m)throws MinutOutOfRangeException { 
 	  if (m >=0 || m <=59) {
 		  this.m=m;
+	  } else {
+		 throw new MinutOutOfRangeException();
 	  }
   }
   
-  public void setSegon(int s) { 
+  public void setSegon(int s)throws SegonOutOfRangeException { 
 	  if (s >=0 || s <=59) {
 		  this.s=s;
+	  } else {
+		  throw new SegonOutOfRangeException();
 	  }
   }
   
