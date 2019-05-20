@@ -6,8 +6,14 @@ public class Hora {
 	  h=0; m=0; s=0;
   }
   
-  public Hora(int h,int m, int s) { 
-	  this.h=h; this.m=m; this.s=s;
+  public Hora(int h,int m, int s) throws HourOutOfRangeException { 
+	  try {
+		  setHora(h);
+		  setMinut(m);
+		  setSegon(s);
+	  } catch (HourOutOfRangeException f) {
+		  throw new HourOutOfRangeException(f.getMessage());
+	  }
   }
   
   public int getHora() {
@@ -23,26 +29,26 @@ public class Hora {
   }
   
   public void setHora(int h)throws HourOutOfRangeException { 
-	  if (h >=0 || h <=23) {
+	  if (h >=0 && h <=23) {
 		  this.h=h;
 	  }else {
-		  throw new HourOutOfRangeException();
+		  throw new HourOutOfRangeException("Error! Hora incorrecta.");
 	  }
   }
   
-  public void setMinut(int m)throws MinutOutOfRangeException { 
-	  if (m >=0 || m <=59) {
+  public void setMinut(int m)throws HourOutOfRangeException { 
+	  if (m >=0 && m <=59) {
 		  this.m=m;
 	  } else {
-		 throw new MinutOutOfRangeException();
+		 throw new HourOutOfRangeException("Error! Minut incorrecte.");
 	  }
   }
   
-  public void setSegon(int s)throws SegonOutOfRangeException { 
-	  if (s >=0 || s <=59) {
+  public void setSegon(int s)throws HourOutOfRangeException { 
+	  if (s >=0 && s <=59) {
 		  this.s=s;
 	  } else {
-		  throw new SegonOutOfRangeException();
+		  throw new HourOutOfRangeException("Error! Segon incorrecte.");
 	  }
   }
   
