@@ -33,7 +33,7 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "[dni=" + dni + ", nom=" + nom + ", direccio=" + direccio + "]";
+		return "nom = " + nom + ", dni = " + dni + ", direccio = " + direccio ;
 	}
 	
 	

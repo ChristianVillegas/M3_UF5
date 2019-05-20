@@ -49,7 +49,7 @@ public class Tenda {
 				elementsClients(cua);
 				break;
 			case "4":
-				//TODO Si la cua és més gran que zero es diu el nom del següent client i se'l treu de la cua 
+				//TODO Si la cua ï¿½s mï¿½s gran que zero es diu el nom del segï¿½ent client i se'l treu de la cua 
 				next(cua);
 				break;
 			default:
@@ -64,14 +64,14 @@ public class Tenda {
 	//TODO Rep el scanner ha de rebre alguna cosa mÃ©s?
 	public static boolean afegirClient(ArrayList<Client> cua){
 		try{
-			System.out.println("Quin és el nom del client?");
+			System.out.println("Quin ï¿½s el nom del client?");
 			String nom = reader.readLine();
 
-			System.out.println("Quin és el dni del client?");
+			System.out.println("Quin ï¿½s el dni del client?");
 			String dni = reader.readLine();
 
 
-			System.out.println("Quina és la direcció del client?");
+			System.out.println("Quina ï¿½s la direcciï¿½ del client?");
 			String direccio = reader.readLine();
 
 			//TODO AquÃ­ s'ha de crear el nou client 
@@ -105,12 +105,10 @@ public class Tenda {
 	}
 	
 	public static void next(ArrayList<Client> cua) {
-		if (cua.size() > 0) {
-			for (int i = 0; i < cua.size(); i++) {
-				System.out.println("Següent: " + cua.get(1));
-				cua.remove(0);
-			}
-			
+		if (cua.size() >= 0) {
+			System.out.println("Segï¿½ent: " + cua.get(0));
+			cua.remove(0);
 		}
+			
 	}
 }
